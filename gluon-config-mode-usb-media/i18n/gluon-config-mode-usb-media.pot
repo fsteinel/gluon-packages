@@ -1,0 +1,17 @@
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8"
+
+msgid ""
+"If you want to share your attached USB storage devices, "
+"here you can enable this and specify the visable path in "
+"the URL of your Node."
+msgstr ""
+
+msgid "Path"
+msgstr ""
+
+msgid "Share your devices"
+msgstr ""
+
+msgid "e.g. %s"
+msgstr ""
