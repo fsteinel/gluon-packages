@@ -14,7 +14,7 @@ define Package/gluon-config-mode-usb-media
   SECTION:=gluon
   CATEGORY:=Gluon
   TITLE:=Enable USB media and set web path for access
-  DEPENDS:=gluon-config-mode-core-virtual
+  DEPENDS:=gluon-config-mode-core-virtual +gluon-usb-media
 endef
 
 define Build/Prepare
