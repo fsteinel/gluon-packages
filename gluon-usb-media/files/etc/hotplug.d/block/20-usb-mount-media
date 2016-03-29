@@ -1,3 +1,4 @@
+USBMEDIAPATH=$(uci get 'usb-media.settings.path')
 case "$ACTION" in
     add)
         if [ "1" == $(uci get 'usb-media.settings.share_devices') ]; then
@@ -9,6 +10,7 @@ case "$ACTION" in
                      logger /mnt/$DEVICENAME was created
                      mount -o ro /dev/$DEVICENAME /mnt/$DEVICENAME || rmdir /mnt/$DEVICENAME
                      logger the media was mounted
+                     [ -d /lib/gluon/status-page/www/$USBMEDIAPATH ] || mv /lib/gluon/status-page/www/media /lib/gluon/status-page/www/$USBMEDIAPATH
                    fi
                    ;;
           esac
@@ -17,5 +19,6 @@ case "$ACTION" in
     remove)
         logger "Remove $DEVICENAME"
         [ -d /mnt/$DEVICENAME ] && rmdir /mnt/$DEVICENAME
+        [ -L /lib/gluon/status-page/www/media ] || mv /lib/gluon/status-page/www/$USBMEDIAPATH /lib/gluon/status-page/www/media
         ;;
 esac
